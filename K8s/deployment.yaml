@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: document-summarizer
+  name: document-summarizer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: document-summarizer
+  template:
+    metadata:
+      labels:
+        app: document-summarizer
+    spec:
+      containers:
+        - name: document-summarizer-container
+          image: 'gcr.io/call-summarizatiion/summarization-image:v10'
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 5000

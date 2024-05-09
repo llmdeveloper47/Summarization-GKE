@@ -1,0 +1,14 @@
+steps:
+# build an image named gcr.io/designing-ml-systems/train:latest on cloudbuild machines
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/call-summarizatiion/summarization-2-2023/summarization:v3', '.']
+
+  #push the image to the container registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/call-summarizatiion/summarization-2-2023/summarization:v3']
+
+images:
+  - us-central1-docker.pkg.dev/call-summarizatiion/summarization-2-2023/summarization:v3
+
+
+

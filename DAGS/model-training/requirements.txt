@@ -1,0 +1,9 @@
+torch==2.0.1
+argparse
+pathlib
+pydantic==1.10.8
+transformers==4.29.2
+datasets
+rouge-score
+nltk
+huggingface_hub==0.14.1
